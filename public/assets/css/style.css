@@ -25,6 +25,7 @@
 #BLOG PAGE
 #GALLERY PAGE
 #CONTACT PAGE
+#PREVISAO PAGE
 #ERROR  PAGE
 #FOOTER SECTION
 #RESPONSIVE DESIGN
@@ -48,6 +49,9 @@ body {
 }
 
 /* MODULES - Individual site components */
+.clear{
+  clear: both;
+}
 ul {
   padding: 0;
   margin: 0;
@@ -74,6 +78,8 @@ h2 {
   font-weight: 700;
   line-height: 40px;
   margin: 0;
+  text-align: center;
+  padding-bottom: 2%;
 }
 
 img {
@@ -111,6 +117,10 @@ img {
 }
 .mu-post-btn:hover, .mu-post-btn:focus {
   color: #fff;
+}
+.full-height-width{
+  height: 100%;
+  width:100%;
 }
 
 /* LAYOUTS - Page layout styles */
@@ -553,6 +563,7 @@ img {
   line-height: 1.7;
   padding: 0 120px;
 }
+
 
 /*==================
  ABOUT US COUNTER SECTION
@@ -1885,7 +1896,208 @@ img {
 #mu-contact .mu-contact-area .mu-contact-content .mu-contact-right iframe {
   height: 500px;
 }
+/*==================
+ PREVISAO PAGE
+====================*/
+.mu-tabua-previsao {
+  text-align: center;
+  padding-top: 3%;
+}
+.mu-temp-previsao{
+margin-right: 192px;
+padding-top:calc(100px);
+}
+.mu-video-previsao{
+  margin:0;
+  padding:0;
+  border:0;
+}
+/*==================
+ Perfil PAGE
+====================*/
+#mu-perfil {
+  display: inline;
+  padding: 100px 0;
+  width: 100%;
+}
+.mu-img-wraper-perfil{
+  width: 50%;
+  padding-top: 10%;
+  padding-bottom: 10%;
+  float: left;
+  background-color: white;
+  position: relative;
+  border: 4px solid white;
+}
+.mu-img-perfil {
+  left: 0;
+  top:0;
+  width: 100%;
+  height: 100%;
+  background-position: center;
+  background-size: contain;
+}
+.mu-block-perfil{
+  height: 15%;
+}
+.mu-img-wraper-perfil .h3{
+  text-align: center;
+  }
+.mu-img2-perfil{
+  background-image: url(../img/gallery/missao.jpg);
+  background-repeat: no-repeat;
+  background-position: center;
+  height:calc(200px);
+}
+.mu-img3-perfil{
+  background-image: url(../img/gallery/visao.jpg);
+  background-repeat: no-repeat;
+  background-position: center;
+  height:calc(200px);
+}
+.mu-img-wraper-perfil p {
+  margin: 20px 130px 10px;
+}
+/*==================
+ INFOGRAFICO
+====================*/
 
+#wrapper {
+  position: relative;
+}
+
+
+/* Hide the original tooltips contents */
+
+.pin {
+  display: none;
+}
+
+
+/* Begin styling the tooltips and pins */
+
+.tooltip-up,
+.tooltip-down {
+  position: absolute;
+  background: url(../img/arrow-up-down.png) no-repeat;
+  background-position: top;
+  width: 50px;
+  height: 51px;
+  cursor: pointer;
+}
+.tooltip-down {}
+
+.tooltip {
+  display: none;
+  width: 250px;
+  cursor: pointer;
+  text-shadow: 0 1px 0 #fff;
+  position: absolute;
+  top: 40px;
+  left: 50%;
+  z-index: 999;
+  margin-left: -125px;
+  padding: 10px;
+  color: #222;
+  -moz-border-radius: 5px;
+  -webkit-border-radius: 5px;
+  border-radius: 5px;
+  -moz-box-shadow: 0 3px 0 rgba(0, 0, 0, .7);
+  -webkit-box-shadow: 0 3px 0 rgba(0, 0, 0, .7);
+  box-shadow: 0 3px 0 rgba(0, 0, 0, .7);
+  background: #fff;
+  border-left: 2px solid #000;
+  border-right: 2px solid #000;
+  border-top: 2px solid #000;
+}
+
+.tooltip::after {
+  content: '';
+  position: absolute;
+  top: -10px;
+  left: 50%;
+  margin-left: -10px;
+  border-bottom: 10px solid #000;
+  border-left: 10px solid transparent;
+  border-right: 10px solid transparent;
+}
+
+.tooltip-down .tooltip {
+  bottom: 40px;
+  top: auto;
+}
+
+.tooltip-down .tooltip::after {
+  bottom: -10px;
+  top: auto;
+  border-bottom: 0;
+  border-top: 10px solid #000;
+}
+
+.tooltip h2 {
+  margin: 5px 0;
+  font-family: 'Oxygen', sans-serif;
+  font-weight: bold;
+  font-size: 22px
+}
+
+.tooltip p {
+  font-family: 'Oxygen', sans-serif;
+}
+
+.tooltip ul {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+/*==================
+ SERVICOS PAGE
+====================*/
+.card-text-2{
+  margin: 20px 15px 40px;
+  padding: 20px;
+  font-size: 16px;
+  font-style: italic;
+  text-align: center;
+}
+.text-h2 {
+  text-align: center;
+  margin-top: 20px;
+}
+.text-h4 {
+  font-family: 'Oxygen', sans-serif;
+  font-weight: bold;
+  padding-top: 30px;
+  padding-bottom: 20px;
+  text-align: center;
+}
+.height_sv{
+  height: calc(370px);
+}
+.img_linha {
+  margin-bottom: 40px;
+}
+.footer-sv{
+  margin-bottom: 100px;
+}
+/*==================
+Meio Ambiente Page
+====================*/
+.height_ma{
+  height: calc(450px);
+}
+.meioambiente .col-md-3 {
+  width: 20%;
+}
+/*==================
+ ESPAÇO CLIENTE
+====================*/
+.height_ec {
+  height: calc(65px);
+}
+#espaco-cliente .card-text-2{
+  height: calc(70px);
+}
 /*==================
  ERROR PAGE
 ====================*/
@@ -1907,6 +2119,103 @@ img {
 #mu-error .mu-error-area h2 {
   font-size: 200px;
   line-height: 1.7;
+}
+/*==================
+ BOTTOM
+====================*/
+.custom-btn {
+  border: 2px solid #0a7a3c !important;
+  background: #0a7a3c !important;
+  color: #FFF !important;
+  font-size: 1em;
+  padding: 0;
+  padding-top: 6px;
+  text-transform: uppercase;
+  width: 100px;
+  -webkit-transition: all .2s ease;
+  -moz-transition: all .2s ease;
+  -ms-transition: all .2s ease;
+  -o-transition: all .2s ease;
+  transition: all .2s ease;
+}
+.btn-sair {
+  border: 2px solid red;
+  background: red;
+  color: #FFF !important;
+  font-size: 14px;
+  margin: auto;
+  padding: 5px 8px 8px 8px;
+  text-transform: uppercase;
+  width: 100%;
+  height: 100%;
+  -webkit-transition: all .2s ease;
+  -moz-transition: all .2s ease;
+  -ms-transition: all .2s ease;
+  -o-transition: all .2s ease;
+  transition: all .2s ease;
+}
+
+.btn-sair:hover {
+  color: #fff !important;
+  border: 2px solid #fff !important;
+  background: transparent;
+}
+.custom-btn:hover {
+  color: #fff !important;
+  border-color: #fff !important;
+  margin: auto;
+  position: relative;
+  z-index: 0;
+  background: transparent !important;
+}
+
+button.btn-black {
+  padding: auto;
+}
+
+.btn-black:hover {
+  color: #000 !important;
+  border-color: #000 !important;
+}
+/*==================
+TESTE
+====================*/
+.box-menu{
+  width: 25%;
+  left: 0;
+
+}
+.box-form{
+  width: 75%;
+  right: 0;
+
+}
+
+.menu-secundario{
+  background-color: #00ced1 !important;
+}
+
+.box-menu ul ul {
+  display: none;
+  position: relative;
+}
+
+.box-menu li {
+  border: 5px solid #0000b3;
+  padding: 1px;
+  background-color: #fff;
+  cursor:pointer;
+}
+.box-menu .card-text-2{
+  margin: 10px 15px 40px;
+  padding: 0px;
+}
+.box-menu .card-text-2 ul{
+}
+
+.box-menu li:hover ul {
+  display: block;
+  cursor:pointer;
 }
 
 /*==================
