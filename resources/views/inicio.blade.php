@@ -60,8 +60,8 @@
                 </div>
               </div>
               <div class="col-lg-6 col-md-6">
-                <div class="mu-about-us-right">                            
-                <a id="mu-abtus-video" href="https://www.youtube.com/embed/T9VtGhmCWOI" target="mutube-video">
+                <div class="mu-about-us-right">
+                <a id="mu-abtus-video " href="https://www.youtube.com/embed/T9VtGhmCWOI?autoplay=1" target="mutube-video " >
                   <img src="assets/img/teste.png" alt="img">
                 </a>                
                 </div>
