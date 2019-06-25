@@ -1,0 +1,10 @@
+##### LOCAWEB - NAO REMOVER #####
+AddHandler php71-script .php
+suPHP_ConfigPath /home/marina5/
+##### LOCAWEB - NAO REMOVER #####
+
+
+Options +FollowSymlinks
+RewriteEngine On
+RewriteRule ^$ public/ [L]
+RewriteRule (.*) public/$1 [L]
