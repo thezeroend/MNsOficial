@@ -1,39 +1,27 @@
 @extends('template.template')
   
 @section('conteudo')
+
+
                 <!-- Start Slider -->
   <section id="mu-slider">
+  @foreach ($slides as $slide)
     <!-- Start single slider item -->
     <div class="mu-slider-single">
       <div class="mu-slider-img">
         <figure>
-          <img src="assets/img/slider/1.jpg" alt="img"> <!-- 1920x500 -->
+          <img src="{{ URL('/storage/public/slides/' . $slide->image) }}" alt="img"> <!-- 1920x500 -->
         </figure>
       </div>
       <div class="mu-slider-content">
         <h4>Marinas Nacionais</h4>
         <span></span>
-        <h2>O lugar certo para cuidar do seu sonho</h2>
-        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Dolor amet error eius reiciendis eum sint unde eveniet deserunt est debitis corporis temporibus recusandae accusamus.</p>
-        <a href="#" class="mu-read-more-btn">Saiba Mais</a>
+        <h2>{{ $slide->titulo }}</h2>
+        <p>{{ $slide->descricao }}</p>
+        <a href="{{ $slide->url }}" class="mu-read-more-btn">Saiba Mais</a>
       </div>
     </div>
-    <!-- Start single slider item -->
-    <!-- Start single slider item -->
-    <div class="mu-slider-single">
-      <div class="mu-slider-img">
-        <figure>
-          <img src="assets/img/slider/2.jpg" alt="img">
-        </figure>
-      </div>
-      <div class="mu-slider-content">
-        <h4>Marinas Nacionais</h4>
-        <span></span>
-        <h2>Competência em mais de 40 anos de história</h2>
-        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Dolor amet error eius reiciendis eum sint unde eveniet deserunt est debitis corporis temporibus recusandae accusamus.</p>
-        <a href="#" class="mu-read-more-btn">Saiba Mais</a>
-      </div>
-    </div>
+  @endforeach
   </section>
   <!-- End Slider -->
   
@@ -105,45 +93,28 @@
             <!-- start conteudo  -->
             <div class="mu-from-blog-content">
               <div class="row">
+                @foreach($noticias as $noticia)
                 <div class="col-md-4 col-sm-4">
                   <article class="mu-blog-single-item">
                     <figure class="mu-blog-single-img">
-                      <a href="#"><img src="assets/img/blog/blog-1.jpg" alt="img"></a>
+                      <a href="#"><img src="{{ URL('/storage/public/noticias/' . $noticia->image) }}" alt="img"></a>
                       <figcaption class="mu-blog-caption">
-                        <h3><a href="#">Evento - As impressões</a></h3>
+                        <h3><a href="#">{{ $noticia->titulo }}</a></h3>
                       </figcaption>                      
                     </figure>
                     <div class="mu-blog-meta">
-                      <a href="#">Meio Ambiente</a>
-                      <a href="#">-  02 Jan 2019</a>
+                      <a href="#">{{ $noticia->categoria }}</a>
+                      <a href="#">-  {{ $noticia->data_post }}</a>
                     </div>
                     <div class="mu-blog-description">
-                      <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Beatae ipsum non voluptatum eum repellendus quod aliquid. Vitae, dolorum voluptate quis repudiandae eos molestiae dolores enim.</p>
+                      <p>{{ $noticia->conteudo }}</p>
                       <a class="mu-read-more-btn" href="#">Ler Tudo</a>
                     </div>
                   </article>
                 </div>
+                @endforeach
                 <!-- Fim Artigo 1 -->
-                <!-- Inicio Artigo 2 -->
-                <div class="col-md-4 col-sm-4">
-                  <article class="mu-blog-single-item">
-                    <figure class="mu-blog-single-img">
-                      <a href="#"><img src="assets/img/blog/blog-2.jpg" alt="img"></a>
-                      <figcaption class="mu-blog-caption">
-                        <h3><a href="#">Evento - Dia de compartilhar conhecimento</a></h3>
-                      </figcaption>                      
-                    </figure>
-                    <div class="mu-blog-meta">
-                      <a href="#">Orientação</a>
-                      <a href="#">- 20 Jan 2019</a>
-                    </div>
-                    <div class="mu-blog-description">
-                      <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Beatae ipsum non voluptatum eum repellendus quod aliquid. Vitae, dolorum voluptate quis repudiandae eos molestiae dolores enim.</p>
-                      <a class="mu-read-more-btn" href="#">Ler Tudo</a>
-                    </div>
-                  </article>
-                </div>
-                <!-- Fim Artigo 2 -->
+
               </div>
             </div>     
             <!-- end conteudo   -->   

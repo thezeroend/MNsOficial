@@ -89,44 +89,44 @@
         </div>
         <div id="navbar" class="navbar-collapse collapse">
           <ul id="top-menu" class="nav navbar-nav navbar-right main-nav">
-            <li class="active"><a href="{{ url('/') }}">Inicio</a></li>            
+            <li class="active"><a href="{{ route('inicio') }}">Inicio</a></li>
             <li class="dropdown">
-              <a href="#" class="dropdown-toggle" data-toggle="dropdown">Perfil <span class="fa fa-angle-down"></span></a>
+              <a href="{{ route('perfil') }}" class="dropdown-toggle" data-toggle="dropdown">Perfil <span class="fa fa-angle-down"></span></a>
               <ul class="dropdown-menu" role="menu">
-                <li><a href="#">Historia</a></li>                
+                <li><a href="{{ route('perfil') }}">Historia</a></li>
                 <li><a href="#">Apresentação</a></li>
                 <li><a href="#">Missão e Visão</a></li>      
                 <li><a href="#">Conheça</a></li>        
               </ul>
             </li>           
             <li class="dropdown">
-              <a href="#" class="dropdown-toggle" data-toggle="dropdown">Serviços <span class="fa fa-angle-down"></span></a>
+              <a href="{{ route('servicos') }}" class="dropdown-toggle" data-toggle="dropdown">Serviços <span class="fa fa-angle-down"></span></a>
               <ul class="dropdown-menu" role="menu">
-                <li><a href="#">Locação de Vagas</a></li>                
+                <li><a href="{{ route('servicos') }}">Locação de Vagas</a></li>
                 <li><a href="#">Restaurante</a></li>        
 				<li><a href="#">Lavanderia</a></li>
              	<li><a href="#">Posto de Combustivel</a></li>
               </ul>
             </li> 
             <li class="dropdown">
-              <a href="{{ url('/noticia') }}" class="dropdown-toggle" data-toggle="dropdown">Notícias <span class="fa fa-angle-down"></span></a>
+              <a href="{{ route('noticia') }}" class="dropdown-toggle" data-toggle="dropdown">Notícias <span class="fa fa-angle-down"></span></a>
               <ul class="dropdown-menu" role="menu">
-                <li><a href="{{ url('/noticia') }}">Ultimas Notícias</a></li>                
+                <li><a href="{{ route('noticia') }}">Ultimas Notícias</a></li>
                 <li><a href="#">Galeria de Fotos</a></li>        
 				<li><a href="#">Publicações</a></li>
               </ul>
             </li>      
             <li class="dropdown">
-              <a href="#" class="dropdown-toggle" data-toggle="dropdown">Meio Ambiente <span class="fa fa-angle-down"></span></a>
+              <a href="{{ route('meioambiente') }}" class="dropdown-toggle" data-toggle="dropdown">Meio Ambiente <span class="fa fa-angle-down"></span></a>
               <ul class="dropdown-menu" role="menu">
-                <li><a href="#">Politica de Meio Ambiente</a></li>                
+                <li><a href="{{ route('meioambiente') }}">Politica de Meio Ambiente</a></li>
                 <li><a href="#">Código de Conduta</a></li>        
 				<li><a href="#">Bandeira Azul</a></li>
              	<li><a href="#">Bandeira Azul individual</a></li>
               </ul>
             </li> 
-            <li><a href="{{ url('/contato') }}">Contato</a></li>
-            <li><a href="#">Espaço do Cliente</a></li>               
+            <li><a href="{{ route('contato') }}">Contato</a></li>
+            <li><a href="{{ route('clienteteste') }}">Espaço do Cliente</a></li>
           </ul>                     
         </div><!--/.nav-collapse -->        
       </div>     
