@@ -111,12 +111,13 @@
               <i class="fa fa-angle-left pull-right"></i>
             </span>
           </a>
-          <ul class="treeview-menu">
+         <!-- <ul class="treeview-menu">
             <li class="active"><a href="index.html"><i class="fa fa-circle-o"></i> Pagina 1</a></li>
             <li><a href="{{ URL('admin/pagina') }}"><i class="fa fa-circle-o"></i> Gerenciar Paginas</a></li>
           </ul>
+          -->
         </li>
-        <li class="treeview">
+        <li class="{{ isset($pagina_banner) ? "active" : '' }} treeview">
           <a>
             <i class="fa fa-files-o"></i>
             <span>Banners e Fotos</span>
@@ -125,11 +126,11 @@
             </span>
           </a>
           <ul class="treeview-menu">
-            <li><a href="pages/layout/top-nav.html"><i class="fa fa-circle-o"></i> Adicionar</a></li>
-            <li><a href="pages/layout/boxed.html"><i class="fa fa-circle-o"></i> Gerenciar Banners</a></li>
+            <li class="{{ isset($banner_create) ? "active" : '' }}"><a href=" {{ URL('admin/banner/create') }}"><i class="fa fa-circle-o"></i> Adicionar</a></li>
+            <li class="{{ isset($banner_create) ? "active" : '' }}"><a href=" {{ URL('admin/banner/create') }}"><i class="fa fa-circle-o"></i> Gerenciar Banners</a></li>
           </ul>
         </li>
-        <li class="treeview">
+        <li class="{{ isset($pagina_galeria) ? "active" : '' }} treeview">
           <a>
             <i class="fa fa-th"></i> 
             <span>Galerias</span>
@@ -138,8 +139,8 @@
             </span>
           </a>
           <ul class="treeview-menu">
-            <li><a href="pages/layout/top-nav.html"><i class="fa fa-circle-o"></i> Adicionar</a></li>
-            <li><a href="pages/layout/boxed.html"><i class="fa fa-circle-o"></i> Gerenciar Galerias</a></li>
+            <li class="{{ isset($galeria_create) ? "active" : '' }}"><a href=" {{ URL('admin/galeria/create') }}"><i class="fa fa-circle-o"></i> Adicionar</a></li>
+            <li class="{{ isset($galeria_index) ? "active" : '' }}"><a href=" {{ URL('admin/galeria') }} "><i class="fa fa-circle-o"></i> Gerenciar Galerias</a></li>
           </ul>
         </li>
         <li class="treeview">
@@ -181,7 +182,7 @@
             <li class="{{ isset($noticia_index) ? "active" : '' }}"><a href=" {{ URL('admin/noticia') }} "><i class="fa fa-circle-o"></i> Gerenciar Noticias</a></li>
           </ul>
         </li>
-        <li class="treeview">
+        <li class="{{ isset($pagina_categorias) ? "active" : '' }} treeview">
           <a>
             <i class="fa fa-edit"></i> <span>Categorias</span>
             <span class="pull-right-container">
@@ -189,8 +190,8 @@
             </span>
           </a>
           <ul class="treeview-menu">
-            <li><a href="pages/forms/general.html"><i class="fa fa-circle-o"></i> Adicionar</a></li>
-            <li><a href="pages/forms/advanced.html"><i class="fa fa-circle-o"></i> Gerenciar Categorias</a></li>
+            <li class="{{ isset($categorias_create) ? "active" : '' }}"><a href="{{ URL('admin/categoria/create') }}"><i class="fa fa-circle-o"></i> Adicionar</a></li>
+            <li class="{{ isset($categorias_index) ? "active" : '' }}"><a href="{{ URL('admin/categoria/') }}"><i class="fa fa-circle-o"></i> Gerenciar Categorias</a></li>
           </ul>
         </li>
         <li class="{{ isset($pagina_clientes) ? "active" : '' }} treeview">
@@ -205,12 +206,9 @@
             <li class="{{ isset($clientes_index) ? "active" : '' }}"><a href="{{ URL('admin/adcliente') }}"><i class="fa fa-circle-o"></i> Gerenciar Clientes</a></li>
           </ul>
         </li>
-        <li>
-          <a>
-            <i class="fa fa-calendar"></i> <span>Configurações</span>
-            <span class="pull-right-container">
-              <i class="fa fa-angle-left pull-right"></i>
-            </span>
+        <li class="{{ isset($pagina_conf) ? "active" : '' }}">
+          <a href="{{ url('admin/configuracao') }}">
+            <i class="fa fa-cog"></i> <span>Configurações</span>
           </a>
         </li>
         <li class="{{ isset($pagina_users) ? "active" : '' }} treeview">

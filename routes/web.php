@@ -36,6 +36,8 @@ Route::group(['prefix' => 'admin','middleware' => ['auth']], function() {
     Route::resource('slide', 'SlideController');
     Route::resource('pagina', 'PaginaController');
     Route::resource('revista', 'RevistaController');
+    Route::resource('categoria', 'CategoriaController');
+    Route::resource('configuracao', 'ConfiguracaoController');
 });
 
 Route::group(['prefix' => 'cliente'], function() {
