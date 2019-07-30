@@ -151,8 +151,8 @@
             </span>
           </a>
           <ul class="treeview-menu">
-            <li><a href="pages/charts/chartjs.html"><i class="fa fa-circle-o"></i> Adicionar</a></li>
-            <li><a href="pages/charts/morris.html"><i class="fa fa-circle-o"></i> Gerenciar Revistas</a></li>
+            <li class="{{ isset($revista_create) ? "active" : '' }}"><a href=" {{ URL('admin/revista/create') }}"><i class="fa fa-circle-o"></i> Adicionar</a></li>
+            <li class="{{ isset($revista_index) ? "active" : '' }}"><a href=" {{ URL('admin/revista') }} "><i class="fa fa-circle-o"></i> Gerenciar Revistas</a></li>
           </ul>
         </li>
         <li class="{{ isset($pagina_slide) ? "active" : '' }} treeview">
