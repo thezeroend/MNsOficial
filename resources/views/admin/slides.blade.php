@@ -52,7 +52,7 @@
 
                                                     <a href="{{ URL('admin/slide/' . $slides->id . '/edit') }}" class="btn btn-sm btn-primary"><i class="fa fa-pencil"></i></a>
 
-                                                    <button type="submit" class="btn btn-sm btn-danger"><i class="fa fa-trash"></i></button>
+                                                    <button type="submit" class="btn btn-sm btn-danger"  onclick="return confirm('Você tem certeza que deseja remover?');"><i class="fa fa-trash"></i></button>
                                                 </form>
                                             </td>
                                         </tr>

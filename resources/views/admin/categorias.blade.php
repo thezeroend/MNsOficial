@@ -6,11 +6,11 @@
         <!-- Content Header (Page header) -->
         <section class="content-header">
             <h1>
-                Noticias
+                Categorias
             </h1>
             <ol class="breadcrumb">
                 <li><a href="#"><i class="fa fa-dashboard"></i> Pagina Inicial</a></li>
-                <li class="active"><a href="#"><i class="fa fa-newspaper-o"></i> Gerenciar Noticias</a></li>
+                <li class="active"><a href="#"><i class="fa fa-newspaper-o"></i> Gerenciar Categorias</a></li>
             </ol>
         </section>
 
@@ -22,7 +22,7 @@
                     <!-- general form elements -->
                     <div class="box box-primary">
                         <div class="box-header with-border">
-                            <h3 class="box-title">Gerenciar Noticias</h3>
+                            <h3 class="box-title">Gerenciar Categorias</h3>
                         </div>
                         <!-- /.box-header -->
                         <div class="box-body">
@@ -39,27 +39,24 @@
                                 <table id="example2" class="table table-bordered table-hover table-responsive">
                                     <thead>
                                     <tr>
-                                        <th>Titulo</th>
+                                        <th>ID</th>
                                         <th>Categoria</th>
-                                        <th>Data</th>
                                         <th style="width: 100px;">Ações</th>
                                     </tr>
                                     </thead>
                                     <tbody>
-                                    @foreach ($noticia as $key => $noticias)
+                                    @foreach ($categorias as $key => $categoria)
                                         <tr>
-                                            <td>{{ $noticias->titulo }}</td>
-                                            <td>{{ $noticias->categoria }}</td>
-                                            <td>03/05/2019
-                                            <img src="{{ URL('/storage/public/noticias/' . $noticias->image) }}" width="80px" height="80px" /></td>
+                                            <td>{{ $categoria->id }}</td>
+                                            <td>{{ $categoria->nome_categoria }}</td>
                                             <td>
-                                                <form action="{{ URL('admin/noticia/' . $noticias->id) }}" method="POST">
+                                                <form action="{{ URL('admin/categoria/' . $categoria->id) }}" method="POST">
                                                     {{ csrf_field() }}
                                                     {{ method_field('DELETE') }}
 
-                                                    <a href="{{ URL('admin/noticia/' . $noticias->id . '/edit') }}" class="btn btn-sm btn-primary"><i class="fa fa-pencil"></i></a>
+                                                    <a href="{{ URL('admin/categoria/' . $categoria->id . '/edit') }}" class="btn btn-sm btn-primary"><i class="fa fa-pencil"></i></a>
 
-                                                    <button type="submit" class="btn btn-sm btn-danger" onclick="return confirm('Você tem certeza que deseja remover?');"><i class="fa fa-trash"></i></button>
+                                                    <button type="submit" class="btn btn-sm btn-danger" Onclick="return confirm('Você tem certeza que deseja remover?');"><i class="fa fa-trash"></i></button>
                                                 </form>
                                             </td>
                                         </tr>
@@ -67,10 +64,9 @@
                                     </tbody>
                                     <tfoot>
                                     <tr>
-                                        <th>Titulo</th>
+                                        <th>ID</th>
                                         <th>Categoria</th>
-                                        <th>Data</th>
-                                        <th>Ações</th>
+                                        <th style="width: 100px;">Ações</th>
                                     </tr>
                                     </tfoot>
                                 </table>
