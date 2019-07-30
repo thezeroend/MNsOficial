@@ -38,7 +38,9 @@
                                         <br>
                                         <input type="text" name="conteudo" placeholder="Conteudo" class="form-control" value="{{ isset($revista) ? $revista->conteudo : ''  }}" required>
                                         <br>
-                                        <input type='file' name='image' class='form-control' required><br>
+                                        <input type='file' name='image' placeholder="Insira sua Imagem aqui" class='form-control' required><br>
+                                        <br>
+                                        <input type='file' name='pdf' placeholder="Insira o PDF aqui" class='form-control' required><br>
                                     </div>
                                 </div>
                             </div>
