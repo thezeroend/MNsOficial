@@ -6,7 +6,6 @@
   <title>CMS 1.0 - Painel Administrativo</title>
   <!-- Tell the browser to be responsive to screen width -->
   <meta content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no" name="viewport">
-
   <!-- Bootstrap 3.3.7 -->
   <link rel="stylesheet" href="{{ asset('PainelAdmin/bower_components/bootstrap/dist/css/bootstrap.min.css') }}">
   <!-- Font Awesome -->
@@ -44,7 +43,7 @@
 
   <header class="main-header">
     <!-- Logo -->
-    <a href="index2.html" class="logo">
+    <a href="{{ URL('admin/home') }}" class="logo">
       <!-- mini logo for sidebar mini 50x50 pixels -->
       <span class="logo-mini"><b>CMS</b></span>
       <!-- logo for regular state and mobile devices -->
@@ -112,9 +111,11 @@
               <i class="fa fa-angle-left pull-right"></i>
             </span>
           </a>
+         <!-- <ul class="treeview-menu">
             <li class="active"><a href="index.html"><i class="fa fa-circle-o"></i> Pagina 1</a></li>
             <li><a href="{{ URL('admin/pagina') }}"><i class="fa fa-circle-o"></i> Gerenciar Paginas</a></li>
           </ul>
+          -->
         </li>
         <li class="{{ isset($pagina_banner) ? "active" : '' }} treeview">
           <a>
@@ -278,12 +279,6 @@
 <script src="{{ asset('PainelAdmin/dist/js/adminlte.min.js') }}"></script>
 <!-- AdminLTE dashboard demo (This is only for demo purposes) -->
 <script src="{{ asset('PainelAdmin/dist/js/pages/dashboard.js') }}"></script>
-
-<!-- CKEditor -->
-<script src="{{ asset('PainelAdmin/ckeditor/ckeditor.js') }}"></script>
-<script>
-  CKEDITOR.replace('conteudo');
-</script>
 
 </body>
 </html>
