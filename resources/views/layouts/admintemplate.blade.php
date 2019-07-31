@@ -119,20 +119,7 @@
             <li><a href="{{ URL('admin/pagina') }}"><i class="fa fa-circle-o"></i> Gerenciar Paginas</a></li>
           </ul>
         </li>
-        <li class="treeview">
-          <a>
-            <i class="fa fa-files-o"></i>
-            <span>Banners e Fotos</span>
-            <span class="pull-right-container">
-                <i class="fa fa-angle-left pull-right"></i>
-            </span>
-          </a>
-          <ul class="treeview-menu">
-            <li><a href="pages/layout/top-nav.html"><i class="fa fa-circle-o"></i> Adicionar</a></li>
-            <li><a href="pages/layout/boxed.html"><i class="fa fa-circle-o"></i> Gerenciar Banners</a></li>
-          </ul>
-        </li>
-        <li class="treeview">
+        <li class="{{ isset($pagina_galeria) ? "active" : '' }} treeview">
           <a>
             <i class="fa fa-th"></i>
             <span>Galerias</span>
@@ -141,11 +128,11 @@
             </span>
           </a>
           <ul class="treeview-menu">
-            <li><a href="pages/layout/top-nav.html"><i class="fa fa-circle-o"></i> Adicionar</a></li>
-            <li><a href="pages/layout/boxed.html"><i class="fa fa-circle-o"></i> Gerenciar Galerias</a></li>
+            <li class="{{ isset($galeria_create) ? "active" : '' }}"><a href=" {{ URL('admin/galeria/create') }} "><i class="fa fa-circle-o"></i> Adicionar</a></li>
+            <li class="{{ isset($galeria_index) ? "active" : '' }}"><a href=" {{ URL('admin/galeria') }} "><i class="fa fa-circle-o"></i> Gerenciar Galerias</a></li>
           </ul>
         </li>
-        <li class="treeview">
+        <li class="{{ isset($pagina_galeria) ? "active" : '' }} treeview">
           <a>
             <i class="fa fa-pie-chart"></i>
             <span>Revistas</span>
@@ -154,8 +141,8 @@
             </span>
           </a>
           <ul class="treeview-menu">
-            <li><a href="pages/charts/chartjs.html"><i class="fa fa-circle-o"></i> Adicionar</a></li>
-            <li><a href="pages/charts/morris.html"><i class="fa fa-circle-o"></i> Gerenciar Revistas</a></li>
+            <li class="{{ isset($revista_create) ? "active" : '' }}"><a href=" {{ URL('admin/revista/create') }} "><i class="fa fa-circle-o"></i> Adicionar</a></li>
+            <li class="{{ isset($revista_index) ? "active" : '' }}"><a href=" {{ URL('admin/revista') }} "><i class="fa fa-circle-o"></i> Gerenciar Revistas</a></li>
           </ul>
         </li>
         <li class="{{ isset($pagina_slide) ? "active" : '' }} treeview">
