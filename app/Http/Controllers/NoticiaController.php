@@ -2,9 +2,11 @@
 
 namespace App\Http\Controllers;
 
+use App\Categoria;
 use App\Noticia;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Storage;
+use Illuminate\Support\Facades\DB;
 
 class NoticiaController extends Controller
 {
@@ -30,6 +32,7 @@ class NoticiaController extends Controller
     {
         $pagina['pagina_noticia'] = "active";
         $pagina['noticia_create'] = "active";
+        $pagina['categorias'] = Categoria::all();
         return view('admin.criarnoticia')->with($pagina);
     }
 
@@ -43,6 +46,7 @@ class NoticiaController extends Controller
     {
         $noticia = [
             'titulo'    => $request->titulo,
+            'descricao' => $request->descricao,
             'conteudo'  => $request->conteudo,
             'categoria' => $request->categoria,
             'image'     => $request->image,
@@ -100,6 +104,7 @@ class NoticiaController extends Controller
     public function edit($id)
     {
         $datant['noticia'] = Noticia::find($id);
+        $datant['categorias'] = Categoria::all();
         return view('admin.criarnoticia', $datant);
     }
 
@@ -112,11 +117,53 @@ class NoticiaController extends Controller
      */
     public function update(Request $request, $id)
     {
-        $noticia = [
-            'titulo'         => $request->titulo,
-            'conteudo'       => $request->conteudo,
-            'categoria'      => $request->categoria,
-        ];
+        if(!$request->hasFile('image') && !$request->file('image')->isValid()) {
+            $noticia = [
+                'titulo' => $request->titulo,
+                'descricao' => $request->descricao,
+                'conteudo' => $request->conteudo,
+                'categoria' => $request->categoria,
+            ];
+        }else{
+
+            $noticia = [
+                'titulo'    => $request->titulo,
+                'descricao' => $request->descricao,
+                'conteudo'  => $request->conteudo,
+                'categoria' => $request->categoria,
+                'image'     => $request->image,
+            ];
+
+            //Pega a extensao da imagem
+            $extension = $request->image->extension();
+
+            //Busca o atual nome da imagem
+            $nameatual = Noticia::find($id);
+
+            //Define o nome
+            foreach($nameatual as $imagemnova) {
+                $nameFile = $nameatual->image;
+            }
+
+            $nameteste = "{$nameFile}";
+
+            //Salva o nome
+            $noticia['image'] = $nameFile;
+
+            //Deleta a Imagem
+            Storage::delete("public/noticias/{$nameFile}");
+
+            //Faz Upload
+            $upload = $request->image->storeAs('public/noticias', $nameFile);
+
+
+            if(!$upload)
+                return redirect()
+                    ->back()
+                    ->with('error', 'Falha ao fazer upload')
+                    ->withInput();
+
+        }
 
         $update = Noticia::find($id)->update($noticia);
 

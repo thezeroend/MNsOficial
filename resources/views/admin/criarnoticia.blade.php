@@ -28,19 +28,47 @@
                         <!-- /.box-header -->
                         <form action="{{ URL('admin/noticia') }}{{ isset($noticia) ? '/'.$noticia->id : '' }}" method="POST" enctype="multipart/form-data">
                             <div class="box-body">
-                                <div class="col-lg-6">
+                                <div class="col-lg-10">
                                     <div class="form-group">
                                         {{ csrf_field() }}
                                         @if (isset($noticia))
                                             {{ method_field('PUT') }}
                                         @endif
-                                        <input type="text" name="titulo" placeholder="titulo" class="form-control" value="{{ isset($noticia) ? $noticia->titulo : ''  }}" required>
+                                        <b>Titulo:</b>
+                                        <input type="text" name="titulo" placeholder="Titulo" class="form-control" value="{{ isset($noticia) ? $noticia->titulo : ''  }}" required>
                                         <br>
-                                        <input type="text" name="conteudo" placeholder="conteudo" class="form-control" value="{{ isset($noticia) ? $noticia->conteudo : ''  }}" required>
+                                        <b>Descrição:</b>
+                                        <input type="text" name="descricao" placeholder="Descrição" class="form-control" value="{{ isset($noticia) ? $noticia->descricao : ''  }}" required>
                                         <br>
-                                        <input type="text" name="categoria" placeholder="categoria" class="form-control" value="{{ isset($noticia) ? $noticia->categoria : ''  }}" required>
+                                        <b>Categoria:</b>
+                                        <select name="categoria" class="form-control">
+                                            <option value="{{ isset($noticia) ? $noticia->categoria : 'Selecione a categoria!'  }}">{{ isset($noticia) ? $noticia->categoria : 'Selecione a categoria!'  }}</option>
+                                            @foreach($categorias as $categoria)
+                                                @if(isset($noticia))
+                                                    @if($categoria->nome_categoria == $noticia->categoria)
+                                                    @else
+                                                        <option value="{{ $categoria->nome_categoria  }}">{{ $categoria->nome_categoria }}</option>
+                                                    @endif
+                                                @else
+                                                    <option value="{{ $categoria->nome_categoria  }}">{{ $categoria->nome_categoria }}</option>
+                                                @endif
+                                            @endforeach
+                                        </select>
                                         <br>
-                                        <input type='file' name='image' class='form-control' required><br>
+                                        <b>Imagem do Banner:</b>
+                                        <input type='file' name='image' class='form-control' required>
+                                        <br>
+                                    </div>
+                                </div>
+                                <div class="col-lg-10">
+                                    <div class="form-group">
+                                        <b>Conteudo:</b>
+                                        <textarea name="conteudo" class="form-control" required>
+                                            {{ isset($noticia) ? $noticia->conteudo : ''  }}
+                                        </textarea>
+
+                                        <br>
+
                                     </div>
                                 </div>
                             </div>
