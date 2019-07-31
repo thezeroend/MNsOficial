@@ -6,6 +6,9 @@
   <title>CMS 1.0 - Painel Administrativo</title>
   <!-- Tell the browser to be responsive to screen width -->
   <meta content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no" name="viewport">
+
+
+
   <!-- Bootstrap 3.3.7 -->
   <link rel="stylesheet" href="{{ asset('PainelAdmin/bower_components/bootstrap/dist/css/bootstrap.min.css') }}">
   <!-- Font Awesome -->
@@ -58,7 +61,7 @@
 
       <div class="navbar-custom-menu">
         <ul class="nav navbar-nav">
-          
+
           <!-- User Account: style can be found in dropdown.less -->
           <li class="dropdown user user-menu">
             <a href="#" class="dropdown-toggle" data-toggle="dropdown">
@@ -81,7 +84,7 @@
                 </div>
                 <div class="pull-right">
                   <a href="{{ route('logout') }}"
-                      onclick="event.preventDefault();
+                     onclick="event.preventDefault();
                       document.getElementById('logout-form').submit();"
                      class="btn btn-default btn-flat">Sair</a>
 
@@ -111,13 +114,12 @@
               <i class="fa fa-angle-left pull-right"></i>
             </span>
           </a>
-         <!-- <ul class="treeview-menu">
+          <ul class="treeview-menu">
             <li class="active"><a href="index.html"><i class="fa fa-circle-o"></i> Pagina 1</a></li>
             <li><a href="{{ URL('admin/pagina') }}"><i class="fa fa-circle-o"></i> Gerenciar Paginas</a></li>
           </ul>
-          -->
         </li>
-        <li class="{{ isset($pagina_banner) ? "active" : '' }} treeview">
+        <li class="treeview">
           <a>
             <i class="fa fa-files-o"></i>
             <span>Banners e Fotos</span>
@@ -126,21 +128,21 @@
             </span>
           </a>
           <ul class="treeview-menu">
-            <li class="{{ isset($banner_create) ? "active" : '' }}"><a href=" {{ URL('admin/banner/create') }}"><i class="fa fa-circle-o"></i> Adicionar</a></li>
-            <li class="{{ isset($banner_create) ? "active" : '' }}"><a href=" {{ URL('admin/banner/create') }}"><i class="fa fa-circle-o"></i> Gerenciar Banners</a></li>
+            <li><a href="pages/layout/top-nav.html"><i class="fa fa-circle-o"></i> Adicionar</a></li>
+            <li><a href="pages/layout/boxed.html"><i class="fa fa-circle-o"></i> Gerenciar Banners</a></li>
           </ul>
         </li>
-        <li class="{{ isset($pagina_galeria) ? "active" : '' }} treeview">
+        <li class="treeview">
           <a>
-            <i class="fa fa-th"></i> 
+            <i class="fa fa-th"></i>
             <span>Galerias</span>
             <span class="pull-right-container">
                 <i class="fa fa-angle-left pull-right"></i>
             </span>
           </a>
           <ul class="treeview-menu">
-            <li class="{{ isset($galeria_create) ? "active" : '' }}"><a href=" {{ URL('admin/galeria/create') }}"><i class="fa fa-circle-o"></i> Adicionar</a></li>
-            <li class="{{ isset($galeria_index) ? "active" : '' }}"><a href=" {{ URL('admin/galeria') }} "><i class="fa fa-circle-o"></i> Gerenciar Galerias</a></li>
+            <li><a href="pages/layout/top-nav.html"><i class="fa fa-circle-o"></i> Adicionar</a></li>
+            <li><a href="pages/layout/boxed.html"><i class="fa fa-circle-o"></i> Gerenciar Galerias</a></li>
           </ul>
         </li>
         <li class="treeview">
@@ -152,8 +154,8 @@
             </span>
           </a>
           <ul class="treeview-menu">
-            <li class="{{ isset($revista_create) ? "active" : '' }}"><a href=" {{ URL('admin/revista/create') }}"><i class="fa fa-circle-o"></i> Adicionar</a></li>
-            <li class="{{ isset($revista_index) ? "active" : '' }}"><a href=" {{ URL('admin/revista') }} "><i class="fa fa-circle-o"></i> Gerenciar Revistas</a></li>
+            <li><a href="pages/charts/chartjs.html"><i class="fa fa-circle-o"></i> Adicionar</a></li>
+            <li><a href="pages/charts/morris.html"><i class="fa fa-circle-o"></i> Gerenciar Revistas</a></li>
           </ul>
         </li>
         <li class="{{ isset($pagina_slide) ? "active" : '' }} treeview">
@@ -229,7 +231,7 @@
 
           </a>
         </li>
-        
+
       </ul>
     </section>
     <!-- /.sidebar -->
@@ -279,6 +281,12 @@
 <script src="{{ asset('PainelAdmin/dist/js/adminlte.min.js') }}"></script>
 <!-- AdminLTE dashboard demo (This is only for demo purposes) -->
 <script src="{{ asset('PainelAdmin/dist/js/pages/dashboard.js') }}"></script>
+
+<!-- CKEditor -->
+<script src="{{ asset('PainelAdmin/ckeditor/ckeditor.js') }}"></script>
+<script>
+  CKEDITOR.replace('conteudo');
+</script>
 
 </body>
 </html>
