@@ -20,6 +20,7 @@ Route::get('perfil', 'TemplateController@perfil')->name('perfil');
 Route::get('previsao', 'TemplateController@previsao')->name('previsao');
 Route::get('clienteteste', 'TemplateController@cliente')->name('clienteteste');
 Route::get('servicos', 'TemplateController@servicos')->name('servicos');
+Route::get('categoria','TemplateController@categoria')->name('categoria');
 
 //Rotas Painel Admin
 
@@ -38,6 +39,7 @@ Route::group(['prefix' => 'admin','middleware' => ['auth']], function() {
     Route::resource('revista', 'RevistaController');
     Route::resource('categoria', 'CategoriaController');
     Route::resource('configuracao', 'ConfiguracaoController');
+    Route::resource('galeria', 'GaleriaController');
 });
 
 Route::group(['prefix' => 'cliente'], function() {

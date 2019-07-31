@@ -6,12 +6,12 @@
         <!-- Content Header (Page header) -->
         <section class="content-header">
             <h1>
-                Revistas
+                Galeria
             </h1>
             <ol class="breadcrumb">
                 <li><a href="#"><i class="fa fa-dashboard"></i> Pagina Inicial</a></li>
-                <li><a><i class="fa fa-newspaper-o"> Gerenciar Revistas</i></a>
-                <li class="active"><a href="#"><i class="fa fa-plus-circle"></i> Adicionar Revistas</a></li>
+                <li><a><i class="fa fa-newspaper-o"> Gerenciar Galeria</i></a>
+                <li class="active"><a href="#"><i class="fa fa-plus-circle"></i> Adicionar Galeria</a></li>
             </ol>
         </section>
 
@@ -23,30 +23,30 @@
                     <!-- general form elements -->
                     <div class="box box-primary">
                         <div class="box-header with-border">
-                            <h3 class="box-title">{{isset($revista) ? 'Alterar': 'Criar'}} Revista</h3>
+                            <h3 class="box-title">{{isset($galeria) ? 'Alterar': 'Criar'}} Galeria</h3>
                         </div>
                         <!-- /.box-header -->
-                        <form action="{{ URL('admin/revista') }}{{ isset($revista) ? '/'.$revista->id : '' }}" method="POST" enctype="multipart/form-data">
+                        <form action="{{ URL('admin/galeria') }}{{ isset($galeria) ? '/'.$galeria->id : '' }}" method="POST" enctype="multipart/form-data">
                             <div class="box-body">
                                 <div class="col-lg-6">
                                     <div class="form-group">
                                         {{ csrf_field() }}
-                                        @if (isset($revista))
+                                        @if (isset($galeria))
                                             {{ method_field('PUT') }}
                                         @endif
-                                        <input type="text" name="titulo" placeholder="Titulo" class="form-control" value="{{ isset($revista) ? $revista->titulo : ''  }}" required>
+                                        <input type="text" name="titulo" placeholder="titulo" class="form-control" value="{{ isset($galeria) ? $galeria->titulo : ''  }}" required>
                                         <br>
-                                        <input type="text" name="conteudo" placeholder="Conteudo" class="form-control" value="{{ isset($revista) ? $revista->conteudo : ''  }}" required>
+                                        <input type="text" name="conteudo" placeholder="conteudo" class="form-control" value="{{ isset($galeria) ? $galeria->conteudo : ''  }}" required>
                                         <br>
-                                        <input type='file' name='image' placeholder="Insira sua Imagem aqui" class='form-control' required>
+                                        <input type="text" name="categoria" placeholder="categoria" class="form-control" value="{{ isset($galeria) ? $galeria->categoria : ''  }}" required>
                                         <br>
-                                        <input type='file' name='pdf' placeholder="Insira o PDF aqui" class='form-control' required><br>
+                                        <input type='file' name='image' class='form-control' required><br>
                                     </div>
                                 </div>
-                         </div>
+                            </div>
                             <!-- /.box-body -->
                             <div class="box-footer">
-                                <button class="btn btn-success">{{isset($revista) ? 'Alterar': 'Criar'}}</button>
+                                <button class="btn btn-success">{{isset($galeria) ? 'Alterar': 'Criar'}}</button>
                             </div>
                         </form>
                     </div>
