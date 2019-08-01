@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Categoria;
 use App\Revista;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Storage;
@@ -30,6 +31,7 @@ class RevistaController extends Controller
     {
         $pagina['pagina_revista'] = "active";
         $pagina['revista_create'] = "active";
+        $pagina['categorias'] = Categoria::all();
         return view('admin.criarrevista')->with($pagina);
     }
 
@@ -44,7 +46,9 @@ class RevistaController extends Controller
         $revista = [
             'titulo'    => $request->titulo,
             'conteudo'  => $request->conteudo,
+            'categoria' => $request->categoria,
             'image'     => $request->image,
+            'pdf'       => $request->pdf,
             'data_post' => date('d/m/Y'),
         ];
 
@@ -99,6 +103,7 @@ class RevistaController extends Controller
     public function edit($id)
     {
         $datant['revista'] = Revista::find($id);
+        $datant['categorias'] = Categoria::all();
         return view('admin.criarrevista', $datant);
     }
 

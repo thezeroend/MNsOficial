@@ -15,7 +15,13 @@ class CreateRevistaPdfTable extends Migration
     {
         Schema::create('revista_pdf', function (Blueprint $table) {
             $table->increments('id');
-            $table->timestamps();
+            $table->integer('revista_id')->unsigned();
+            $table->foreign('revista_id')->
+                references('id')->
+                on('revista')->
+                onDelete('cascade');
+            $table->string('pdf');
+            $table->string('data_post');
         });
     }
 

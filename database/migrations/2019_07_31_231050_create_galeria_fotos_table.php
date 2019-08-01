@@ -15,7 +15,13 @@ class CreateGaleriaFotosTable extends Migration
     {
         Schema::create('galeria_fotos', function (Blueprint $table) {
             $table->increments('id');
-            $table->timestamps();
+            $table->integer('galeria_id')->unsigned();
+            $table->foreign('galeria_id')->
+                references('id')->
+                on('galeria')->
+                onDelete('cascade');
+            $table->string('image');
+            $table->string('data_post');
         });
     }
 

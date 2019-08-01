@@ -38,6 +38,20 @@
                                         <br>
                                         <input type="text" name="conteudo" placeholder="Conteudo" class="form-control" value="{{ isset($revista) ? $revista->conteudo : ''  }}" required>
                                         <br>
+                                        <select name="categoria" class="form-control">
+                                            <option value="{{ isset($revista) ? $revista->categoria : 'Selecione a categoria!'  }}">{{ isset($revista) ? $revista->categoria : 'Selecione a categoria!'  }}</option>
+                                            @foreach($categorias as $categoria)
+                                                @if(isset($revista))
+                                                    @if($categoria->nome_categoria == $revista->categoria)
+                                                    @else
+                                                        <option value="{{ $categoria->nome_categoria  }}">{{ $categoria->nome_categoria }}</option>
+                                                    @endif
+                                                @else
+                                                    <option value="{{ $categoria->nome_categoria  }}">{{ $categoria->nome_categoria }}</option>
+                                                @endif
+                                            @endforeach
+                                        </select>
+                                        <br>
                                         <input type='file' name='image' placeholder="Insira sua Imagem aqui" class='form-control' required>
                                         <br>
                                         <input type='file' name='pdf' placeholder="Insira o PDF aqui" class='form-control' required><br>

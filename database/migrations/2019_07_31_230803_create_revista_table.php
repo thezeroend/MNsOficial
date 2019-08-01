@@ -15,7 +15,9 @@ class CreateRevistaTable extends Migration
     {
         Schema::create('revista', function (Blueprint $table) {
             $table->increments('id');
-            $table->timestamps();
+            $table->string('titulo');
+            $table->string('categoria');
+            $table->string('data_post');
         });
     }
 
