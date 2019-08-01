@@ -80,7 +80,7 @@
               <!-- Menu Footer-->
               <li class="user-footer">
                 <div class="pull-left">
-                  <a href="#" class="btn btn-default btn-flat">Mudar Senha</a>
+                  <a href="{{ URL('admin/usuario/') }}/{{ Auth::user()->id }}/edit" class="btn btn-default btn-flat">Mudar Senha</a>
                 </div>
                 <div class="pull-right">
                   <a href="{{ route('logout') }}"
@@ -213,7 +213,7 @@
           </ul>
         </li>
         <li>
-          <a href="#">
+          <a href="{{ URL('admin/usuario/') }}/{{ Auth::user()->id }}/edit">
             <i class="fa fa-folder"></i> <span>Alterar Senha</span>
 
           </a>
