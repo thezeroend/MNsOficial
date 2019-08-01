@@ -34,6 +34,7 @@
                                         @if (isset($usuario))
                                             {{ method_field('PUT') }}
                                         @endif
+                                        <b>Nome Completo:</b>
                                         <input id="name" type="text" placeholder="Nome" class="form-control" name="name" value="{{ isset($usuario) ? $usuario->name : ''  }}" required autofocus>
 
                                         @if ($errors->has('name'))
@@ -44,6 +45,7 @@
 
                                         <br>
 
+                                        <b>Nome de Usuário:</b>
                                         <input type="text" id="usuario" placeholder="Usuario" class="form-control" name="usuario" value="{{ isset($usuario) ? $usuario->usuario : ''  }}" {{ isset($usuario) ? 'disabled' : 'required'  }} autofocus>
 
                                         @if ($errors->has('usuario'))
@@ -54,6 +56,8 @@
                                         @endif
 
                                         <br>
+
+                                        <b>E-mail:</b>
                                         <input id="email" type="email" placeholder="E-mail" class="form-control" name="email" value="{{ isset($usuario) ? $usuario->email : ''  }}" required>
 
                                         @if ($errors->has('email'))
@@ -65,6 +69,7 @@
 
                                         <br>
 
+                                        <b>Senha:</b>
                                         <input id="password" placeholder="{{ isset($usuario) ? 'Deixe em branco para não alterar' : 'Digite a Senha'  }}" type="password" class="form-control" name="password" {{ isset($usuario) ? '' : 'required'  }}>
 
                                         @if ($errors->has('password'))
@@ -75,6 +80,8 @@
                                         @endif
 
                                         <br>
+
+                                        <b>Confirme a Senha:</b>
                                         <input id="password-confirm" placeholder="{{ isset($usuario) ? 'Deixe em branco para não alterar' : 'Confirme a Senha'  }}" type="password" class="form-control" name="password_confirmation" {{ isset($usuario) ? '' : 'required'  }}>
                                     </div>
                                 </div>
